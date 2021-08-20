@@ -7,8 +7,7 @@ Fixed program to determine score status
 def main():
     import random
     score = random.randint(1, 100)
-    print(score)
-    print(rate_score(score))
+    print(score, rate_score(score))
 
 
 def rate_score(score):
