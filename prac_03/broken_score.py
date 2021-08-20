@@ -1,6 +1,7 @@
 """
 CP1404/CP5632 - Practical
-Fixed program to determine score status
+Program to determine score status using functions
+user input changed for random number generation
 """
 
 
