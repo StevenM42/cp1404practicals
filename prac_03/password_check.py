@@ -1,4 +1,6 @@
-"""Password check program that returns asterisks of password length"""
+"""
+CP1404/CP5632 - Practical
+Password check program that returns asterisks of password length"""
 
 
 def main():
