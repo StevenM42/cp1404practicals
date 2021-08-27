@@ -1,6 +1,6 @@
 """
 CP1404/CP5632 Practical
-Starter code for cumulative total income program
+Program for cumulative total income program
 """
 
 
@@ -21,7 +21,7 @@ def print_report(incomes):
     total = 0
     for month, income in enumerate(incomes):
         total += income
-        print("Month {:2} - Income: ${:10.2f} Total: ${:10.2f}".format(month, income, total))
+        print("Month {:2} - Income: ${:8.2f}      Total: ${:.2f}".format(month + 1, income, total))
 
 
 main()
