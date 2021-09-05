@@ -13,5 +13,6 @@ for word in words:
 counted_words = list(word_frequency.keys())
 counted_words.sort()
 
+longest_word_length = max(len(word) for word in counted_words)
 for word in counted_words:
-    print("{} : {}".format(word, word_frequency[word]))
+    print("{:{}} : {}".format(word, longest_word_length, word_frequency[word]))
