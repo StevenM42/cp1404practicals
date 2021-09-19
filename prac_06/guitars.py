@@ -20,14 +20,13 @@ def main():
         print(guitar_to_add, "added")
         name = input("Name: ")
 
+    guitars.append(Guitar("Fender Stratocaster", 2014, 765.4))
     guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
     guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
 
     print("These are my guitars:")
     for i, guitar in enumerate(guitars):
-        vintage_status = ""
-        if guitar.is_vintage():
-            vintage_status = "vintage"
+        vintage_status = "vintage" if guitar.get_age() >= 50 else ""
         print(f"Guitar {i + 1}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f} {vintage_status}")
 
 
