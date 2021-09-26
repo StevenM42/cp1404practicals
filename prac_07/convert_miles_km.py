@@ -1,4 +1,7 @@
-
+"""
+CP1404 Practical 7
+Miles to Kilometer conversion program using kivy GUI
+"""
 from kivy.app import App
 from kivy.lang import Builder
 
@@ -10,6 +13,23 @@ class MilesConverter(App):
         self.title = "Convert Miles to Kilometres"
         self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
+
+    def handle_increment(self, change):
+        value = self.get_validated_miles() + change
+        self.root.ids.input_miles.text = str(value)
+        self.handle_calculate()
+
+    def handle_calculate(self):
+        value = self.get_validated_miles()
+        result = value * MILES_TO_KM
+        self.root.ids.output_label.text = str(result)
+
+    def get_validated_miles(self):
+        try:
+            value = float(self.root.ids.input_miles.text)
+            return value
+        except ValueError:
+            return 0
 
 
 MilesConverter().run()
