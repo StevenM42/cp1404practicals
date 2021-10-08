@@ -1,6 +1,6 @@
 """
 CP1404/CP5632 Practical
-Car class test
+Taxi class test
 """
 
 from prac_08.taxi import Taxi
