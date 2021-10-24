@@ -36,7 +36,20 @@ def main():
 
 def get_fixed_filename(filename):
     """Return a 'fixed' version of filename."""
-    new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
+    initial_changed_name = filename.replace(" ", "_").replace(".TXT", ".txt")
+    previous_character = ""
+    new_name = ""
+    for i, character in enumerate(initial_changed_name):
+        current_character = character
+        if previous_character == "_" and current_character.islower():
+            new_name += current_character.upper()
+        elif previous_character == "(" and current_character.islower():
+            new_name += current_character.upper()
+        elif previous_character.islower() and current_character.isupper():
+            new_name += "_{}".format(current_character)
+        else:
+            new_name += current_character
+        previous_character = character
     return new_name
 
 
