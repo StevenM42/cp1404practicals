@@ -8,18 +8,21 @@ import shutil
 
 
 def main():
+    extension_to_category = {}
     os.chdir("FilesToSort")
     for filename in os.listdir('.'):
         if os.path.isdir(filename):
             continue
 
         extension = filename.split('.')[-1]
-
-        try:
-            os.mkdir(extension)
-        except FileExistsError:
-            pass
-        shutil.move(filename, extension + '/' + filename)
+        if extension not in extension_to_category:
+            category = input("What category would you like to sort {} files into? ".format(extension))
+            extension_to_category[extension] = category
+            try:
+                os.mkdir(category)
+            except FileExistsError:
+                pass
+        shutil.move(filename, extension_to_category[extension] + '/' + filename)
 
 
 main()
