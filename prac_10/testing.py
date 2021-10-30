@@ -73,3 +73,14 @@ doctest.testmod()
 # test this and watch the tests fail
 # then write the body of the function so that the tests pass
 
+def sentence_formatting():
+    """
+    Format a phrase into a sentence, making start a capital and end with a period
+    >>> sentence_formatting('hello')
+    'Hello.'
+    >>> sentence_formatting('It is an ex parrot')
+    'It is an ex parrot.'
+    >>> sentence_formatting('david Bowie')
+    'David Bowie.
+    """
+    pass
