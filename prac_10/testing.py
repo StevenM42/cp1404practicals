@@ -53,17 +53,8 @@ def run_tests():
     test_car = Car()
     assert test_car.fuel == 0, "Car does not set fuel correctly"
 
-
-run_tests()
-
-
-# (PyCharm may see your >>> doctest comments and run doctests anyway.)
-doctest.testmod()
-
-
 # (don't change the tests, change the function!)
 
-# TODO: 5. Write and test a function to format a phrase as a sentence,
 # starting with a capital and ending with a single full stop.
 # Important: start with a function header and just use pass as the body
 # then add doctests for 3 tests:
@@ -73,7 +64,8 @@ doctest.testmod()
 # test this and watch the tests fail
 # then write the body of the function so that the tests pass
 
-def sentence_formatting():
+
+def sentence_formatting(phrase):
     """
     Format a phrase into a sentence, making start a capital and end with a period
     >>> sentence_formatting('hello')
@@ -81,6 +73,14 @@ def sentence_formatting():
     >>> sentence_formatting('It is an ex parrot')
     'It is an ex parrot.'
     >>> sentence_formatting('david Bowie')
-    'David Bowie.
+    'David bowie.'
     """
-    pass
+    sentence = phrase.capitalize()
+    if sentence[-1] != '.':
+        sentence += '.'
+    return sentence
+
+
+run_tests()
+
+doctest.testmod()
